@@ -12,6 +12,6 @@ api.get('/obtenerCategoriaNombre', categoriaControlador.buscarCategoriaNombre)
 api.put('/editarCategoria/:id', categoriaControlador.editarCategoria);
 api.delete('/eliminarCategoria/:id', categoriaControlador.eliminarCategoria);
 api.put('/agregarInformacion/:id', categoriaControlador.agregarInformación);
-
+api.get('/obtenerInformacion/:id', categoriaControlador.obtenerInformacion);
 
 module.exports = api;
