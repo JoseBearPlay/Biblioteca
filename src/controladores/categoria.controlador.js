@@ -88,6 +88,13 @@ function agregarInformación(req, res){
         })
 }
 
+function obtenerInformacion(req, res){
+  var idCategorias = req.params.id;
+  Categoria.findById(idCategorias, {informacion: 1}, (err, informacionObtenida)=>{
+    return res.status(200).send({ informacionObtenida: informacionObtenida})
+  })
+}
+
 module.exports = {
     ejemplo,
     agregarCategoria,
@@ -96,5 +103,6 @@ module.exports = {
     editarCategoria,
     eliminarCategoria,
     agregarInformación, 
-    buscarCategoriaNombre
+    buscarCategoriaNombre,
+    obtenerInformacion
 }
