@@ -79,23 +79,6 @@ function eliminarCategoria(req, res){
     })
 }
 
-function agregarInformación(req, res){
-    var params = req.body;
-    var idCategoria = req.params.id;
-
-    Categoria.findByIdAndUpdate(idCategoria, {$push: {informacion: { descripcion: params.descripcion}}},
-        {new: true}, (err, informacionAgregada)=>{
-            return res.status(200).send({informacionAgregada: informacionAgregada});
-        })
-}
-
-function obtenerInformacion(req, res){
-  var idCategorias = req.params.id;
-  Categoria.findById(idCategorias, {informacion: 1}, (err, informacionObtenida)=>{
-    return res.status(200).send({ informacionObtenida: informacionObtenida})
-  })
-}
-
 module.exports = {
     ejemplo,
     agregarCategoria,
@@ -103,7 +86,5 @@ module.exports = {
     obtenerCategorias,
     editarCategoria,
     eliminarCategoria,
-    agregarInformación, 
     buscarCategoriaNombre,
-    obtenerInformacion
 }
