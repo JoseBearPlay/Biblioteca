@@ -5,10 +5,7 @@ var Schema = mongoose.Schema;
 
 var CategoriaSchema = Schema({
     nombre: String,
-    informacion: [{
-        descripcion:String,
-        imagen: String
-    }]
+    informacion: String,
 });
 
 module.exports = mongoose.model("categorias", CategoriaSchema); 
