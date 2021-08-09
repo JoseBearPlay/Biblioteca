@@ -10,8 +10,9 @@ function agregarCategoria(req, res){
     var categoriasModel = new Categoria();
     var params = req.body;
 
-    if(params.nombre){
+    if(params.nombre, params.informacion){
         categoriasModel.nombre = params.nombre;
+        categoriasModel.informacion = params.informacion;
 
         categoriasModel.save((err, categoriaGuardada)=>{
             if(err) return res.status(500).send({mensaje: 'Error en la peticion de la categoria'});
